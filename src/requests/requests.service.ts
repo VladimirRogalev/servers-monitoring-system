@@ -3,21 +3,23 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { RequestEntity } from './request.entity';
 import { CreateRequestDto } from './dto/create-request.dto';
+import { ServersService } from '../servers/servers.service';
 
 @Injectable()
 export class RequestsService {
   constructor(
     @InjectRepository(RequestEntity)
     private readonly requestRepository: Repository<RequestEntity>,
+    private readonly serversService: ServersService,
   ) {}
 
   create(dto: CreateRequestDto) {
     const entry = this.requestRepository.create(dto);
-    console.log('Saving request entry:', entry);
     return this.requestRepository.save(entry);
   }
 
-  findRecent(serverId: number, limit = 10) {
+  async findRecent(serverId: number, limit = 10) {
+    await this.serversService.findOne(serverId);
     return this.requestRepository.find({
       where: { server: { id: serverId } },
       order: { createdAt: 'DESC' },

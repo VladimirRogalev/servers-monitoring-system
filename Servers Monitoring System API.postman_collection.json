@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "78261c76-6b4c-43f7-a566-599893349ba5",
+		"name": "Servers Monitoring System API",
+		"description": "Postman collection for Servers Monitoring System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40110368"
+	},
+	"item": [
+		{
+			"name": "createServer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Example Server\",\n  \"url\": \"https://example.com\",\n  \"protocol\": \"https\",\n  \"isHealthy\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/servers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"servers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllServers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/servers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"servers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getServerById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/servers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"servers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateServer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Google\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/servers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"servers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteServer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/servers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"servers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequestHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/requests/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"requests",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

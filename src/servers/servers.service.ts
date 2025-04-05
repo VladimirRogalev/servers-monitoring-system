@@ -27,7 +27,7 @@ export class ServersService {
       relations: ['requests'],
     });
     if (!server) {
-      throw new NotFoundException('Server not found');
+      throw new NotFoundException(`Server with ID ${id} not found`);
     }
     return server;
   }
@@ -40,9 +40,6 @@ export class ServersService {
 
   async remove(id: number): Promise<Server> {
     const server = await this.findOne(id);
-    if (!server) {
-      throw new NotFoundException('Server not found');
-    }
     return this.serverRepository.remove(server);
   }
 }

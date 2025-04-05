@@ -5,12 +5,12 @@ import * as process from 'node:process';
 @Injectable()
 export class MailerService {
   private transporter = nodemailer.createTransport({
-    host: process.env.SMPT_HOST,
+    host: process.env.SMTP_HOST || 'smtp.ethereal.email',
     port: process.env.SMPT_PORT ? parseInt(process.env.SMPT_PORT) : 587,
     secure: false,
     auth: {
-      user: process.env.SMPT_USER,
-      pass: process.env.SMPT_PASS,
+      user: process.env.SMPT_USER || 'christ.armstrong2@ethereal.email',
+      pass: process.env.SMPT_PASS || 'zC1PepStFm18DWvzN8',
     },
   });
 

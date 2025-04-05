@@ -8,7 +8,7 @@ import {
 import { Server } from '../servers/server.entity';
 
 @Entity()
-export class Log {
+export class RequestEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

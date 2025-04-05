@@ -95,7 +95,7 @@ export class MonitorService {
         const newHealth = await this.requestsService.changeHealth(server.id);
         if (server.isHealthy !== newHealth) {
           await this.mailerService.sendStatus(
-            'winten2@yandex.ru',
+            process.env.ALERT_EMAIL!,
             server.name,
             newHealth,
           );
