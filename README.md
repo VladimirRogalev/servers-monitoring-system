@@ -30,10 +30,8 @@ cd servers-monitoring-system
 $ npm install
 ```
 
-## Create a .env file and specify environment variables:
-```bash
-cp .env.example .env
-```
+## Create a .env file and specify environment variables
+
 ## Example .env
 
 #Database
